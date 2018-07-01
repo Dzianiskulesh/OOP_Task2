@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Event {
+    // TODO: DK: Обычно поля класса делают Private а доступ организовывают через геттеры и сеттеры
     public int id;
     public String title;
     public String place;
     public String description;
     public Date date;
     public String type;
+    // TODO: DK: Коллекцию лучше объявлять интерфейсом, т.е.    public List<Ticket> eventTickets; В случае если например в будушем ты захочешь поменять ArrayList на LinkedList класс Event.java не нужно будет править.
     public ArrayList<Ticket> eventTickets;
 
     public Event() {
