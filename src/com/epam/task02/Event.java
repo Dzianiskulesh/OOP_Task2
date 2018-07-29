@@ -14,9 +14,7 @@ public class Event {
     private String type;
     private List<Ticket> eventTickets;
 
-    public Event() {
 
-    }
     public Event(int id, String title, String place, String description, LocalDate date, String type, ArrayList<Ticket> eventTickets) {
         this.id = id;
         this.title = title;
@@ -82,5 +80,15 @@ public class Event {
 
     public void setEventTickets(List<Ticket> eventTickets) {
         this.eventTickets = eventTickets;
+    }
+
+
+    //TEST!!!!!!!!!!
+    public Event(int id, String title, String place, String description, String type) {
+        this.id = id;
+        this.title = title;
+        this.place = place;
+        this.description = description;
+        this.type = type;
     }
 }

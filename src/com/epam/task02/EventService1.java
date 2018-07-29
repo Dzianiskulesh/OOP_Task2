@@ -1,7 +1,5 @@
 package com.epam.task02;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -9,11 +7,10 @@ import java.util.*;
 public class EventService1 implements EventService {
 
     //Find Event by place
-    // TODO: DK: place можно было бы сделать enum.
-    public ArrayList<Event> findEventsByPlace(ArrayList<Event> allEvents, String place) {
+    public ArrayList<Event> findEventsByPlace(ArrayList<Event> allEvents, EventPlace place) {
         ArrayList<Event> results = new ArrayList<>();
         for (int i = 0; i < allEvents.size(); i++) {
-            if (allEvents.get(i).getPlace().contains(place)) {
+            if (allEvents.get(i).getPlace().contains(place.name())) {
                 results.add(allEvents.get(i));
             }
         }
