@@ -26,6 +26,12 @@ public class BookingService1 implements BookingService {
     }
 
     public List<Ticket> bookTickets(Event event, int ticketsNeeded) {
+        /**
+         *   TODO: DK: Код который находит свободное количество билетов, используется в обоих методах  "checkTicketsAvailable" и "bookTickets".
+         *   Можно было бы сделать приватный метод и вынести этот код туда.
+         *
+          */
+
         List<Ticket> ticketsAvailable = new ArrayList<>();
         for (int i = 0; i < event.getEventTickets().size(); i++) {
             if (event.getEventTickets().get(i).isAvailable()) {
@@ -37,6 +43,7 @@ public class BookingService1 implements BookingService {
                 ticketsAvailable.get(j).setAvailable(false);
             }
             System.out.println("You booked " + ticketsNeeded + " tickets!");
+            // TODO: DK: похожее было в другом методе у тебя. Получается что метод возвращает все билеты которые были свободны до букинга. По названию и логике ожидается что метод доложен возвращать забранированные билеты.
             return ticketsAvailable;
         } else {
             System.out.println("Sorry, this amount of tickets is not available!");

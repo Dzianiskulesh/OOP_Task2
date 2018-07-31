@@ -9,6 +9,7 @@ public class EventService1 implements EventService {
     //Find Event by place
     public ArrayList<Event> findEventsByPlace(ArrayList<Event> allEvents, EventPlace place) {
         ArrayList<Event> results = new ArrayList<>();
+        // TODO: DK: Тут удобнее было бы foreach использовать, более компактно и  не нужно несколько раз вызывать "allEvents.get(i)"
         for (int i = 0; i < allEvents.size(); i++) {
             if (allEvents.get(i).getPlace().contains(place.name())) {
                 results.add(allEvents.get(i));
@@ -23,6 +24,7 @@ public class EventService1 implements EventService {
         } else {
             System.out.println("Мероприятий в этом месте не найдено!");
         }
+        // TODO: DK: если метод возвращает коллекцию (List) удобнее было бы возвращать пустую коллекцию чем лист. Потом можно не проверять на NULL а сразу итерировать по коллекции foreach. В случае пустой коллекции просто ничего не будет выполняться.
         return null;
     }
 
@@ -47,6 +49,7 @@ public class EventService1 implements EventService {
         } else {
             System.out.println("Мероприятий со свободными местами нет!");
         }
+        // TODO: DK: тоже лучше возвращать пустоую коллекцию.
         return null;
     }
 

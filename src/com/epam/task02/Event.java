@@ -2,6 +2,7 @@ package com.epam.task02;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+// TODO: DK : Неиспользуемые импорты обычно удаляют. В IDE можно настроить чтобы это автоматически делалось.
 import java.util.Date;
 import java.util.List;
 
